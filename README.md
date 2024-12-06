@@ -24,6 +24,7 @@ ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
 ```
 
 ## ECR
+IAM user with AmazonEC2ContainerRegistryFullAccess or else.
 aws configure
 
-ECS push help commands
+Run ECR push commands
