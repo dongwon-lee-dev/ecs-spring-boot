@@ -14,3 +14,16 @@ PATH: %JAVA_HOME%\bin
 
 ![project-setting](image/project-setting.png)
 ![gradle-setting](image/gradle-setting.png)
+
+Dockerfile
+```bash
+FROM openjdk:17-alpine
+WORKDIR app
+COPY target/docker-example-microservice-0.0.1-SNAPSHOT.jar ./docker-example.jar 
+ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
+```
+
+## ECR
+aws configure
+
+ECS push help commands
