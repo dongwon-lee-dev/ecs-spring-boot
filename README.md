@@ -28,3 +28,7 @@ IAM user with AmazonEC2ContainerRegistryFullAccess or else.
 aws configure
 
 Run ECR push commands
+
+ecs
+public instance + public ip enabled + public ALB
+priate insance + public ip disabled + ALB
