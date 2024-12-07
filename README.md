@@ -31,4 +31,4 @@ Run ECR push commands
 
 ecs
 public instance + public ip enabled + public ALB
-priate insance + public ip disabled + manually create public ALB
+priate insance + public ip disabled + manually create target group and public ALB
