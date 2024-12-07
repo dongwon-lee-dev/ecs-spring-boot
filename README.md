@@ -29,6 +29,14 @@ aws configure
 
 Run ECR push commands
 
+ECS
+Cluster: name
+Task family: name, container name, container image uri, container port
+Service: name, desired task number, vpc, subnet, security group, ALB, Auto scaling
+
+Target group: 
+ALB: 
+
 ecs
 public instance + public ip enabled + public ALB
 priate insance + public ip disabled + manually create target group and public ALB
