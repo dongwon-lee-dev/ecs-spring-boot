@@ -37,6 +37,8 @@ Service: name, desired task number, vpc, subnet, security group, ALB, Auto scali
 Target group: 
 ALB: 
 
++ ecs task role IAM
+
 ecs
 public instance + public ip enabled + public ALB
 priate insance + public ip disabled + manually create target group and public ALB
