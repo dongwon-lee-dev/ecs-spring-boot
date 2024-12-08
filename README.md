@@ -30,6 +30,10 @@ aws configure
 Run ECR push commands
 
 ECS
+# Task - Container port
+# Target Group - 80
+# ALB - 80
+
 Cluster: name
 Task family: name, container name, container image uri, container port, app protocol (HTTP, HTTP, GRC, None)
 Service: name, desired task number, vpc, subnet, security group, ALB, Auto scaling
