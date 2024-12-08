@@ -39,6 +39,28 @@ ALB:
 
 + ecs task role IAM
 
+ALB log -> S3 policy 
+```bash
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::elb-account-id:root"
+      },
+      "Action": "s3:PutObject",
+      "Resource": "s3-bucket-arn"
+    }
+  ]
+}
+```
+elb-account-id
+us-east-1	127311923021
+us-east-2	033677994240
+us-west-1	027434742980
+us-west-2	797873946194
+
 ecs
 public instance + public ip enabled + public ALB
 priate insance + public ip disabled + manually create target group and public ALB
