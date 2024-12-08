@@ -31,7 +31,7 @@ Run ECR push commands
 
 ECS
 Cluster: name
-Task family: name, container name, container image uri, container port
+Task family: name, container name, container image uri, container port, app protocol (HTTP, HTTP, GRC, None)
 Service: name, desired task number, vpc, subnet, security group, ALB, Auto scaling
 
 Target group: 
