@@ -76,3 +76,4 @@ make each other security group Inbound / Outbound
 
 # ECS communication between Services
 use only service connect
+!!! Task Definition - Port Mapping Name - Manually Input, do not auto create
