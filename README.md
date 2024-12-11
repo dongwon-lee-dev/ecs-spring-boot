@@ -92,7 +92,7 @@ backend API server endpoint should be https
 make each other security group Inbound / Outbound
 
 # ECS communication between Services
-use only service connect
+Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
 
 !!! Use Chrome developer tools to get more information if there is a problem
