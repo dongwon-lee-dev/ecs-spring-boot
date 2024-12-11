@@ -68,3 +68,11 @@ us-west-2	797873946194
 ecs
 public instance + public ip enabled + public ALB
 priate insance + public ip disabled + manually create target group and public ALB
+
+
+# RDS
+RDS - EC2 / Lambda / ECS container
+make each other security group Inbound / Outbound
+
+# ECS communication between Services
+use only service connect
