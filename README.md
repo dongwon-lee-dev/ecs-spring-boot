@@ -21,7 +21,7 @@ In case of Gradle
 ![gradle-setting](image/gradle-setting.png)
 
 Creating a JAR file using Maven
-
+![create-jar](image/create-jar.png)
 
 
 Dockerfile
