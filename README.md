@@ -80,3 +80,6 @@ make each other security group Inbound / Outbound
 # ECS communication between Services
 use only service connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
+
+!!! Use Chrome developer tools to get more information if there is a problem
+Mixed Content: browser does not accept http response when https request is sent -> Nextjs use proxy api: frontend first send request to its backend and then send it to official backend
