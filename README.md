@@ -1,5 +1,7 @@
 # ecs-spring-boot
 
+![springboot-backend](image/springboot-backend.jpg)
+
 ## 1) Create a Spring Boot application
 1. Download JDK
 https://www.openlogic.com/openjdk-downloads
@@ -14,6 +16,14 @@ PATH: %JAVA_HOME%\bin
 
 ![project-setting](image/project-setting.png)
 ![gradle-setting](image/gradle-setting.png)
+
+In case of Gradle
+![gradle-setting](image/gradle-setting.png)
+
+Creating a JAR file using Maven
+![create-jar](image/create-jar.png)
+
+
 
 Dockerfile
 ```bash
@@ -72,6 +82,10 @@ priate insance + public ip disabled + manually create target group and public AL
 
 # RDS
 RDS - EC2 / Lambda / ECS container
+![rds-connection](image/rds-connection.jpg)
+
+
+
 !!!
 Mixed Content: The page at 'https://a.dongwonlee.dev/' was loaded over HTTPS, but requested an insecure resource 'http://backend2.devcluster1:3001/api/email'. This request has been blocked; the content must be served over HTTPS.
 backend API server endpoint should be https
