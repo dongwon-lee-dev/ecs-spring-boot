@@ -99,7 +99,7 @@ Local MySQL connection - Use separate host and port
       host: "localhost",
       port: 3306,
       user: "root",
-      database: "production",
+      database: "items",
     };
 ```
 
