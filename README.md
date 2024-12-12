@@ -92,6 +92,17 @@ Mixed Content: The page at 'https://a.dongwonlee.dev/' was loaded over HTTPS, bu
 backend API server endpoint should be https
 make each other security group Inbound / Outbound
 
+
+Local MySQL connection - Use separate host and port
+```bash
+    const dbConfig = {
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      database: "production",
+    };
+```
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
