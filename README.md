@@ -84,7 +84,8 @@ RDS - EC2 / Lambda / ECS container
 ![rds-connection](image/rds-connection.jpg)
 
 ### Secret Manager
-Make Role with SecretManagerReadWrite or custom policy getSecret -> Give role to task role and task execution role
+1) Make Role with SecretManagerReadWrite or custom policy getSecret -> Give role to task role and task execution role
+2) ValueFrom Secret ARN:key::
 
 !!!
 Mixed Content: The page at 'https://a.dongwonlee.dev/' was loaded over HTTPS, but requested an insecure resource 'http://backend2.devcluster1:3001/api/email'. This request has been blocked; the content must be served over HTTPS.
