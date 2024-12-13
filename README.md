@@ -32,6 +32,13 @@ COPY target/docker-example-microservice-0.0.1-SNAPSHOT.jar ./docker-example.jar
 ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
 ```
 
+### Load Balancer, Target Group, and Domain
+1. ACM create -> get CNAME and Value
+2. Domain DNS management create CNAME record
+3. Check ACM validated
+4. Set Load Balancer the SSL certificate
+
+
 ## ECR
 IAM user with AmazonEC2ContainerRegistryFullAccess or else.
 aws configure
