@@ -106,7 +106,7 @@ Local MySQL connection - Use separate host and port
 EC2 - SecretManager
 1. Add IAM Role with getSecret Policy
 2. Check script on Secret Manger Secret for getting the secret
-3. EC2: install python3 / sudo apt install python3-boto3 / sudo apt install python3-pymysql / use script to use secret 
+3. EC2: sudo apt install python3 / sudo apt install python3-boto3 / sudo apt install python3-pymysql / use script to use secret 
 
 # ECS communication between Services
 Use Service Connect
