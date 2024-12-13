@@ -107,6 +107,40 @@ EC2 - SecretManager
 1. Add IAM Role with getSecret Policy
 2. Check script on Secret Manger Secret for getting the secret
 3. EC2: sudo apt install python3 / sudo apt install python3-boto3 / sudo apt install python3-pymysql / use script to use secret 
+```python
+import os
+import boto3
+import json
+import subprocess
+
+def get_secret():
+    secret_name = <Secret Name>
+    region_name = <Region>
+
+    session = boto3.session.Session()
+    client = session.client(
+        service_name="secretsmanager",
+        region_name=region_name
+    )
+
+    response = client.get_secret_value(SecretId=secret_name)
+    secret = json.loads(response["SecretString"])
+    return secret["password"]
+
+def connect_to_mysql():
+    password = get_secret()
+    os.environ["MYSQL_PWD"] = password  
+    command = [
+        "mysql",
+        "-h", <RDS instance endpoint>,
+        "-u", <RDS instance user name>
+    ]
+    subprocess.run(command)
+
+if __name__ == "__main__":
+    connect_to_mysql()
+```
+
 
 # ECS communication between Services
 Use Service Connect
