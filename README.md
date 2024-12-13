@@ -103,6 +103,10 @@ Local MySQL connection - Use separate host and port
     };
 ```
 
+EC2 - SecretManager
+1. Add IAM Role with getSecret Policy
+2. Check script on Secret Manger Secret for getting the secret
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
