@@ -42,6 +42,7 @@ ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
 2. Add Listener 443 with SSL certificate
 3. Listener 80 - Redirect URL to Listener 443
 4. Listener 443 - Add Listener Rule with Host Header condition
+* Check ECS Service Security Group - Inbound Port 3000
 
 
 ## ECR
