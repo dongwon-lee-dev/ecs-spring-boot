@@ -44,6 +44,9 @@ ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
 4. Listener 443 - Add Listener Rule with Host Header condition
 * Check ECS Service Security Group - Inbound Port 3000 for ALB Health check
 
+### Website access Typo Error
+Check Route 53 CNAME record TTL 
+Load Balancer Host header condition listener rule change takes time according to DNS record TTL
 
 ## ECR
 IAM user with AmazonEC2ContainerRegistryFullAccess or else.
