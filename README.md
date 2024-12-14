@@ -97,7 +97,7 @@ RDS - EC2 / Lambda / ECS container
 ![rds-connection](image/rds-connection.jpg)
 
 ### Secret Manager
-1) Make Role with SecretManagerReadWrite or custom policy getSecret -> Give role to task role and task execution role
+1) Make Role with TaskExecutionPolicy + SecretManagerReadWrite or custom policy getSecret -> Give Role to [Task execution role]
 2) ValueFrom Secret ARN:key::
 
 !!!
