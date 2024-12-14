@@ -38,6 +38,11 @@ ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
 3. Check ACM validated
 4. Set Load Balancer the SSL certificate
 
+1. Registered Domain - CNAME record main domain or subdomain (*) - Load Balancer DNS
+2. Add Listener 443 with SSL certificate
+3. Listener 80 - Redirect URL to Listener 443
+4. Listener 443 - Add Listener Rule with Host Header condition
+
 
 ## ECR
 IAM user with AmazonEC2ContainerRegistryFullAccess or else.
