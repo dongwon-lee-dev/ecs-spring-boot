@@ -48,6 +48,13 @@ ENTRYPOINT ["java","-jar","/app/docker-example.jar"]
 Check Route 53 CNAME record TTL 
 Load Balancer Host header condition listener rule change takes time according to DNS record TTL
 
+### Too many redirections
+Nginx HTTP to HTTPS configuration 
+```bash
+sudo ls /etc/nginx/sites-enabled/
+cat /etc/nginx/sites-enabled/local  # Also check other files
+```
+
 ## ECR
 IAM user with AmazonEC2ContainerRegistryFullAccess or else.
 aws configure
