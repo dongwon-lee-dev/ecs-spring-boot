@@ -171,3 +171,8 @@ Use Service Connect
 
 !!! Use Chrome developer tools to get more information if there is a problem
 Mixed Content: browser does not accept http response when https request is sent -> Nextjs use proxy api: frontend first send request to its backend and then send it to official backend
+
+# CICD
+Dockerfile, buildspec.yaml, appspec.yaml in project folder
+
+### CodeBuild - permission + AmazonEC2ContainerRegistryReadOnly
