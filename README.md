@@ -190,6 +190,15 @@ if __name__ == "__main__":
     connect_to_mysql()
 ```
 
+# SSM -> Fargate
+1. Add AmazonSSMManagedInstanceCore to ECS Task Role
+2. Enable SSM in ECS Cluster
+```bash
+aws ecs update-cluster-settings \
+    --cluster <cluster-name> \
+    --settings name=executeCommandAgentEnabled,value=true
+```
+
 
 # ECS communication between Services
 Use Service Connect
