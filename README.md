@@ -200,7 +200,7 @@ aws ecs update-service --cluster Devcluster --service backend-service --enable-e
 ```
 4. Execute command
 ```bash
-aws ecs execute-command --region us-east-1 --cluster prod-cluster --task [Task ARN] --container [Task Name] --command "/bin/sh" --interactive
+aws ecs execute-command --region us-east-1 --cluster DevCluster --task [Task ARN] --container [Task Name] --command "/bin/sh" --interactive
 ```
 
 
