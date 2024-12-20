@@ -191,12 +191,10 @@ if __name__ == "__main__":
 ```
 
 # SSM -> Fargate
-1. Add AmazonSSMManagedInstanceCore to ECS Task Role
-2. Enable SSM in ECS Cluster
+1. Add AmazonSSMManagedInstanceCore to ECS Task Role (Not ECS Task Execution Role)
+2. Enable execute command in service
 ```bash
-aws ecs update-cluster-settings \
-    --cluster <cluster-name> \
-    --settings name=executeCommandAgentEnabled,value=true
+aws ecs update-service --cluster Devcluster --service backend-service --enable-execute-command --force-new-deployment
 ```
 
 
