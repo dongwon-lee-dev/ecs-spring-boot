@@ -107,7 +107,7 @@ RDS - EC2 / Lambda / ECS container
 ![rds-connection](image/rds-connection.jpg)
 
 ### Parameter Store
-1) Make Role with TaskExecutionPolicy + AmazonSSMReadOnlyAccess or custom policy getSecret -> Give Role to [Task execution role]
+1) Make Role with TaskExecutionPolicy + AmazonSSMReadOnlyAccess + custom policy getSecret -> Give Role to [Task execution role]
 ```json
 {
   "Version": "2012-10-17",
@@ -129,8 +129,9 @@ RDS - EC2 / Lambda / ECS container
   ]
 }
 ```
-3) ValueFrom Secret ARN:key::
-4) 
+2) ValueFrom Secret ARN:key::
+3) (If using Customer Manager Key) KMS Policy: Add the ECS task role to the resource policy of the KMS key
+
 ### Secret Manager
 1) Make Role with TaskExecutionPolicy + SecretManagerReadWrite or custom policy getSecret -> Give Role to [Task execution role]
 2) ValueFrom Secret ARN:key::
