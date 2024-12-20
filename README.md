@@ -198,6 +198,10 @@ https://docs.aws.amazon.com/systems-manager/latest/userguide/install-plugin-wind
 ```bash
 aws ecs update-service --cluster Devcluster --service backend-service --enable-execute-command --force-new-deployment
 ```
+4. Execute command
+```bash
+aws ecs execute-command --region us-east-1 --cluster prod-cluster --task [Task ARN] --container [Task Name] --command "/bin/sh" --interactive
+```
 
 
 # ECS communication between Services
