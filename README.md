@@ -106,6 +106,31 @@ priate insance + public ip disabled + manually create target group and public AL
 RDS - EC2 / Lambda / ECS container
 ![rds-connection](image/rds-connection.jpg)
 
+### Parameter Store
+1) Make Role with TaskExecutionPolicy + AmazonSSMReadOnlyAccess or custom policy getSecret -> Give Role to [Task execution role]
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameters",
+        "ssm:GetParameter",
+        "ssm:DescribeParameters"
+      ],
+      "Resource": "arn:aws:ssm:region:account-id:parameter/myapp/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "arn:aws:kms:region:account-id:key/key-id"
+    }
+  ]
+}
+```
+3) ValueFrom Secret ARN:key::
+4) 
 ### Secret Manager
 1) Make Role with TaskExecutionPolicy + SecretManagerReadWrite or custom policy getSecret -> Give Role to [Task execution role]
 2) ValueFrom Secret ARN:key::
