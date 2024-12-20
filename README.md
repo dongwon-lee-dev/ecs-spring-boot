@@ -191,8 +191,10 @@ if __name__ == "__main__":
 ```
 
 # SSM -> Fargate
-1. Add AmazonSSMManagedInstanceCore to ECS Task Role (Not ECS Task Execution Role)
-2. Enable execute command in service
+1. (If using local PC) Install Session Manager Plugin
+https://docs.aws.amazon.com/systems-manager/latest/userguide/install-plugin-windows.html
+2. Add AmazonSSMManagedInstanceCore to ECS Task Role (Not ECS Task Execution Role)
+3. Enable execute command in service
 ```bash
 aws ecs update-service --cluster Devcluster --service backend-service --enable-execute-command --force-new-deployment
 ```
