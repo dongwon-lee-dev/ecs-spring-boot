@@ -205,6 +205,56 @@ aws ecs execute-command --region us-east-1 --cluster DevCluster --task [Serivce'
 # Error Troubleshooting
 ### Use Chrome Developer Tools
 
+# Mixed Content Error - Browser not accepting http
+### Nextjs - Use its own proxy server
+/pages/api/proxy.js
+```bash
+import axios from 'axios';
+
+export default async function handler(req, res) {
+  const backendUrl = 'http://backend-service.local/api'; // HTTP 백엔드 엔드포인트
+
+  try {
+    const response = await axios({
+      method: req.method, 
+      url: `${backendUrl}${req.url}`, 
+      data: req.body,
+      headers: req.headers,
+    });
+
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    console.error('Proxy error:', error.message);
+    res.status(error.response?.status || 500).json({
+      message: 'Error proxying request to backend',
+      error: error.message,
+    });
+  }
+}
+```
+### Others - Use Nginx proxy with SSL
+```bash
+server {
+    listen 443 ssl;
+    server_name frontend.example.com;
+
+    ssl_certificate /path/to/fullchain.pem;
+    ssl_certificate_key /path/to/privkey.pem;
+
+    location /api {
+        proxy_pass http://backend-service.local;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location / {
+        root /var/www/frontend;
+        index index.html;
+        try_files $uri /index.html;
+    }
+}
+```
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
