@@ -381,6 +381,9 @@ Frontend or Backend needs upgrade HTTP 2 or downgrade HTTP 1.1
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
 
+# Backend cannot connect to DB even if it was possible
+Secret Manager secret changed. run new task
+
 !!! Use Chrome developer tools to get more information if there is a problem
 Mixed Content: browser does not accept http response when https request is sent -> Nextjs use proxy api: frontend first send request to its backend and then send it to official backend
 
