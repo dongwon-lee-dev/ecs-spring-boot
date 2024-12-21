@@ -372,7 +372,7 @@ sudo systemctl reload nginx
 
 # Too many redirections
 [Target group] check port 80 
-ALB 443 -> target group 80 -> nginx redirect 443 -> ALB 443 -> target group 80
+ALB 443 -> target group port 80 -> nginx redirect 443 -> ALB 443 -> target group 80
 
 
 # ECS communication between Services
