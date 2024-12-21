@@ -314,6 +314,14 @@ Easy to manage through your domain DNS provider.
 1) conf.d
 2) sites-available -> sites-enabled: sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
+# Nginx Certbot
+```bash
+sudo apt update
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d example.com
+# And modify nginx /etc/nginx/sites-available file
+```
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
