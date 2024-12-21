@@ -316,10 +316,10 @@ Easy to manage through your domain DNS provider.
 
 # Nginx Certbot
 ```bash
-sudo apt update
-sudo apt install certbot python3-certbot-nginx vim -y
+apt update
+apt install certbot python3-certbot-nginx vim -y
 
-sudo certbot --nginx -d example.com
+certbot --nginx -d example.com
 
 vi /etc/nginx/nginx.conf
     #include /etc/nginx/conf.d/*.conf;
@@ -330,12 +330,12 @@ mkdir sites-available
 mkdir sites-enabled
 
 vi /etc/nginx/sites-available/example.com
-sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
 
-sudo nginx -t
+certbot install --cert-name example.com --nginx
+
+nginx -t
 nginx -s reload
-
-sudo certbot install --cert-name example.com --nginx
 ```
 
 Change Nginx to use sites-enabled
