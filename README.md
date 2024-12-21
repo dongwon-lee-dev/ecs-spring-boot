@@ -202,7 +202,8 @@ aws ecs update-service --cluster Devcluster --service backend-service --enable-e
 ```bash
 aws ecs execute-command --region us-east-1 --cluster DevCluster --task [Serivce's Task ARN] --container [Task Definition Name] --command "/bin/sh" --interactive
 ```
-
+# Error Troubleshooting
+### Use Chrome Developer Tools
 
 # ECS communication between Services
 Use Service Connect
