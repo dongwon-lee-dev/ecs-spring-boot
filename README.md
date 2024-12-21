@@ -334,7 +334,7 @@ sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
 sudo nginx -t
 nginx -s reload
 
-
+sudo certbot install --cert-name example.com --nginx
 
 
 # And modify nginx /etc/nginx/sites-available file
