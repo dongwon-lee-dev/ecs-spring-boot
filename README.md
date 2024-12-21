@@ -310,6 +310,10 @@ Pros
 No dependency on HTTP paths in distributed environments.
 Easy to manage through your domain DNS provider.
 
+# Nginx /etc/nginx
+1) conf.d
+2) sites-available -> sites-enabled: sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
