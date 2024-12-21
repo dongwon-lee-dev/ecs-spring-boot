@@ -299,6 +299,17 @@ Issue certificates with the Certbot container.
 Share the certificates with Nginx (using the /etc/letsencrypt volume).
 Run the Certbot container periodically from cron or systemd for automatic renewal.
 
+### Solution 
+Certbot uses HTTP-01 or DNS-01 validation to verify domain ownership. In a distributed container environment, you should run Certbot in one container to issue certificates and share it with other containers.
+1) Method: Run the Certbot container separately
+2) Method: Use DNS-01 Verification
+Configuration
+DNS-01 verification verifies domain ownership by adding a specific TXT record to the DNS records of the domain name.
+Using DNS-01 verification instead of HTTP-01 will work even if your Certbot run environment is distributed.
+Pros
+No dependency on HTTP paths in distributed environments.
+Easy to manage through your domain DNS provider.
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
