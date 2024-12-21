@@ -322,6 +322,38 @@ sudo certbot --nginx -d example.com
 # And modify nginx /etc/nginx/sites-available file
 ```
 
+Change Nginx to use sites-enabled
+Open the main Nginx configuration file:
+
+Check the include directive in /etc/nginx/nginx.conf.
+bash
+Copy code
+sudo nano /etc/nginx/nginx.conf
+Add include for sites-enabled directory:
+
+Comment or delete existing include /etc/nginx/conf.d/*.conf;
+Add include /etc/nginx/sites-enabled/*;
+nginx
+Copy code
+http {
+// Remove include for existing conf.d directory
+// include /etc/nginx/conf.d/*.conf;
+
+// Include new sites-enabled directory
+include /etc/nginx/sites-enabled/*;
+
+}
+Test the configuration file:
+
+bash
+Copy code
+sudo nginx -t
+Restart Nginx service:
+
+bash
+Copy code
+sudo systemctl reload nginx
+
 # ECS communication between Services
 Use Service Connect
 !!! Task Definition - Port Mapping Name - Manually Input, do not auto create
