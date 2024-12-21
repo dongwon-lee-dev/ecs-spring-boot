@@ -325,6 +325,7 @@ vi /etc/nginx/nginx.conf
     #include /etc/nginx/conf.d/*.conf;
     include /etc/nginx/sites-enabled/*;
 
+cd /etc/nginx
 mkdir sites-available
 mkdir sites-enabled
 
