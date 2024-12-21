@@ -232,7 +232,7 @@ export default async function handler(req, res) {
   }
 }
 ```
-### Others - Use Nginx proxy with SSL
+### Others - Use Nginx proxy with SSL, Certbot as Let's Encrypt
 ```bash
 server {
     listen 443 ssl;
@@ -254,6 +254,50 @@ server {
     }
 }
 ```
+90 days renew
+```bash
+sudo certbot renew --dry-run
+sudo systemctl reload nginx
+```
+
+Practical implementation: Separate containers and Certbot
+Issue and renew certificates with the Certbot container.
+
+Share the certificate path with the Nginx container:
+
+Store the certificate in the /etc/letsencrypt directory and share it with Nginx.
+Example Nginx configuration file:
+```bash
+server {
+    listen 443 ssl;
+    server_name example.com;
+
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files $uri /index.html;
+    }
+}
+
+server {
+    listen 80;
+    server_name example.com;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    return 301 https://$host$request_uri;
+}
+```
+
+Recommended Workflow
+Issue certificates with the Certbot container.
+Share the certificates with Nginx (using the /etc/letsencrypt volume).
+Run the Certbot container periodically from cron or systemd for automatic renewal.
 
 # ECS communication between Services
 Use Service Connect
