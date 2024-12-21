@@ -374,6 +374,8 @@ sudo systemctl reload nginx
 [Target group] check port 80 
 ALB 443 -> target group port 80 -> nginx redirect 443 -> ALB 443 -> target group 80
 
+# Error 426 Upgrade required
+Frontend or Backend needs upgrade HTTP 2 or downgrade HTTP 1.1
 
 # ECS communication between Services
 Use Service Connect
