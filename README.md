@@ -393,4 +393,12 @@ Secret Manager cycle change -> Restart ECS service
 # CICD
 Dockerfile, buildspec.yaml, appspec.yaml in project folder
 
+# URL / or no /
+Check if full URL works
+BASE_URL localhost/api
+BASE_URL localhost/api/
+BASEURL getItem
+localhost/apigetItem
+localhost/api/getItem
+
 ### CodeBuild - permission + AmazonEC2ContainerRegistryReadOnly
