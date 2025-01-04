@@ -402,3 +402,8 @@ localhost/apigetItem
 localhost/api/getItem
 
 ### CodeBuild - permission + AmazonEC2ContainerRegistryReadOnly
+
+# PHP Laravel
+아파치 실행 시 /var/www/html에서
+php artisan tinker
+$_ENV
